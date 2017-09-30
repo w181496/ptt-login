@@ -1,13 +1,13 @@
 # PTT-login
 
-批量帳密登入PTT腳本
+PTT批量帳密登入腳本
 
 ## 安裝
 
 1. 安裝python
 2. `git clone https://github.com/w181496/ptt-login.git`
 
-## 用法
+## 使用說明
 
 1. 將帳號和密碼填入`acc.txt`中，中間以空白隔開，一行一組帳密
 2. `python PttAuto.py`

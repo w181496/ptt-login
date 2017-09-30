@@ -19,7 +19,6 @@ def login(host, user ,password) :
         output(u"[ERROR] 系統超載，晚點再來~", "red")
         sys.exit(0)
         
-
     if u"請輸入代號" in content:
         output(u"輸入帳號中...", "gray")
         telnet.write(user + "\r\n" )
@@ -33,7 +32,7 @@ def login(host, user ,password) :
            sys.exit()
            content = telnet.read_very_eager().decode('big5','ignore')
         if u"您想刪除其他重複登入" in content:
-           output(u"刪除重複登入的連線...", "blue")
+           output(u"刪除重複的連線中...", "blue")
            telnet.write("y\r\n")
            time.sleep(10)
            content = telnet.read_very_eager().decode('big5','ignore')
@@ -63,13 +62,11 @@ def disconnect() :
      output(u"登出中...", "gray")
      telnet.write("qqqqqqqqqg\r\ny\r\n" )
      time.sleep(delay - 0.2)
-     #content = telnet.read_very_eager().decode('big5','ignore')
      output(u"登出成功!", "green")
      telnet.close()
 
 def setdelay() :
     str = u'Input delay: '
-#output('test','green')
     delay = input(str.encode('big5'))  # Windows
 
 def output(msg, color='Normal') :
